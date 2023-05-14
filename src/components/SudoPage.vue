@@ -1,18 +1,18 @@
 <template>
     <div>
-      <h1>Twitter Job Data</h1>
-      <p>This is the twitter page content.</p>
+      <h1>SUDO Data</h1>
+      <p>This is the SUDO page content.</p>
     </div>
   </template>
   
   <script>
   export default {
-    name: 'TwitterJob',
+    name: 'SudoPage',
   }
   </script>
   
   <style scoped>
-  .twitterjob {
+  .sudo {
     text-align: center;
     margin-top: 20px;
   }

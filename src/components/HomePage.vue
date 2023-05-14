@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>Welcome to Home Page</h1>
+      <h1>COMP90024 Group 24</h1>
       <p>This is the home page content.</p>
     </div>
   </template>
