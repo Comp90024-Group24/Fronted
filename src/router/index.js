@@ -1,17 +1,21 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-Vue.use(Router)
-export default new Router({
-    routes: [
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '@/components/HomePage.vue'
+import TwitterAll from '@/components/TwitterAll.vue'
+
+const routes = [
         {
             path: '/',
-            name: 'home',
-            component: () => import('@/views/Home.vue')
+            name: 'HomePage',
+            component: HomePage
         },
         {
-            path: '/about',
-            name: 'about',
-            component: () => import('@/views/About.vue')
+            path: '/view1',
+            name: 'TwitterAll',
+            component: TwitterAll
         }
     ]
+const router = createRouter({
+    history: createWebHistory(),
+    routes
 })
+export default router
