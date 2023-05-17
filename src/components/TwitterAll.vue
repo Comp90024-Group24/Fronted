@@ -25,7 +25,7 @@
     methods: {
       async getData() {
         try {
-          const response = await axios.get('http://127.0.0.1:5000/getTest');
+          const response = await axios.get('http://172.26.133.42:8000/getTest');
           console.log(response.data);
           this.data = response.data;
        
