@@ -15,6 +15,9 @@
             <li class="nav-item">
                 <router-link class="nav-link" to="/view3">SudoData</router-link>
             </li>
+            <li class="nav-item">
+                <router-link class="nav-link" to="/view4">MastodonData</router-link>
+            </li>
         </ul>
     </div>
 </nav>
