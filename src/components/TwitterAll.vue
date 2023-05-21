@@ -11,65 +11,36 @@
 import axios from 'axios';
 import * as echarts from 'echarts';
 
-export default {
-  name: 'TwitterAll',
-  data() {
-    return {
-      chart: null,
-      data: [],
-    };
-  },
-  async mounted() {
-    this.chart = echarts.init(document.getElementById('chart'));
-    await this.getData();
-  },
-  methods: {
-    async getData() {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/city_num');
-        console.log(response.data);
-        this.data = response.data;
-        this.updateChart();
-      } catch (error) {
-        console.log(error);
-      }
+  export default {
+    name: 'TwitterAll',
+    props:{
+      msg: String
     },
-    updateChart() {
-      const option = {
-        title: {
-          text: 'Twitter Count by City'
-        },
-        tooltip: {},
-        xAxis: [{
-            type: 'category',
-            data: ['Adelaide', 'Capital', 'Brisbane', 'Darwin', 'Hobart', 'Melbourne', 'Perth', 'Sydney'],
-            axisTick: {
-              alignWithLabel: true
-            },
-            axisLabel: {
-              interval: 0,   
-              rotate: 45 
-            }
-          }
-        ],
-        yAxis: {},
-        series: [{
-          name: 'Twitter Count',
-          type: 'bar',
-          data: this.data.map(item => item.twitterCount)
-        }]
+    data() {
+      return{
+        data: [],
       };
-      this.chart.setOption(option);
+    },
+    methods: {
+      async getData() {
+        try {
+          const response = await axios.get('http://127.0.0.1:5000/getTest');
+          console.log(response.data);
+          this.data = response.data;
+       
+        } catch (error) {
+          console.log(error);
+        }
+      }
     }
   }
-}
-</script>
-
-<style scoped>
-.twitterall {
-  text-align: center;
-  margin-top: 20px;
-}
-</style>
-
+  </script>
+  
+  <style scoped>
+  .twitterall {
+    text-align: center;
+    margin-top: 20px;
+  }
+  </style>
+  
   
