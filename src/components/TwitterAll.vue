@@ -5,7 +5,7 @@
     <button class="btn btn-primary" @click="getData1">update city number</button>
     <div id="chart" style="width: 600px;height:400px;"></div>
     <button class="btn btn-primary" @click="getData2">update language number</button>
-    <div id="chart2" style="width: 600px;height:400px;"></div>
+    <div id="chart2" style="width: 600px;height:800px;"></div>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
       chart: null,
       chart2: null,
       data: [],
-      data2:[],
+      data2: [],
     };
   },
   async mounted() {
@@ -56,16 +56,16 @@ export default {
         },
         tooltip: {},
         xAxis: [{
-            type: 'category',
-            data: ['Adelaide', 'Capital', 'Brisbane', 'Darwin', 'Hobart', 'Melbourne', 'Perth', 'Sydney'],
-            axisTick: {
-              alignWithLabel: true
-            },
-            axisLabel: {
-              interval: 0,   
-              rotate: 45 
-            }
+          type: 'category',
+          data: ['Adelaide', 'Capital', 'Brisbane', 'Darwin', 'Hobart', 'Melbourne', 'Perth', 'Sydney'],
+          axisTick: {
+            alignWithLabel: true
+          },
+          axisLabel: {
+            interval: 0,
+            rotate: 45
           }
+        }
         ],
         yAxis: {},
         series: [{
@@ -77,18 +77,38 @@ export default {
       this.chart.setOption(option);
     },
     updateChart2() {
-      const pieOption = {
-        title: {
-          text: 'Pie Chart Title',
-          subtext: 'Subtext',
+      const pieOption =
+      {
+        tooltip: {
+          trigger: 'item'
+        },
+        legend: {
+          top: '5%',
           left: 'center'
         },
-        series: [{
-          name: 'Series Name',
-          type: 'pie',
-          radius: '50%',
-          data: this.data2.map(item => ({ name: item.language, value: item.twitterCount })),
-        }]
+        series: [
+          {
+            name: 'Access From',
+            type: 'pie',
+            radius: ['30%', '70%'],
+            avoidLabelOverlap: true,
+            label: {
+              show: false,
+              position: 'center'
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: 40,
+                fontWeight: 'bold'
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            data: this.data2.map(item => ({ name: item.language, value: item.twitterCount })),
+          }
+        ]
       };
       this.chart2.setOption(pieOption);
     }
