@@ -2,8 +2,10 @@
   <div>
     <h1>Twitter</h1>
     <p>This is the twitter page content.</p>
-    <button class="btn btn-primary" @click="getData">update city number</button>
+    <button class="btn btn-primary" @click="getData1">update city number</button>
     <div id="chart" style="width: 600px;height:400px;"></div>
+    <button class="btn btn-primary" @click="getData2">update language number</button>
+    <div id="chart2" style="width: 600px;height:400px;"></div>
   </div>
 </template>
 
@@ -16,20 +18,33 @@ export default {
   data() {
     return {
       chart: null,
+      chart2: null,
       data: [],
+      data2:[],
     };
   },
   async mounted() {
     this.chart = echarts.init(document.getElementById('chart'));
-    await this.getData();
+    this.chart2 = echarts.init(document.getElementById('chart2'));
+    await this.getData1();
   },
   methods: {
-    async getData() {
+    async getData1() {
       try {
         const response = await axios.get('http://127.0.0.1:8000/city_num');
         console.log(response.data);
         this.data = response.data;
         this.updateChart();
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async getData2() {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/lang_num');
+        console.log(response.data);
+        this.data2 = response.data;
+        this.updateChart2();
       } catch (error) {
         console.log(error);
       }
@@ -60,7 +75,24 @@ export default {
         }]
       };
       this.chart.setOption(option);
+    },
+    updateChart2() {
+      const pieOption = {
+        title: {
+          text: 'Pie Chart Title',
+          subtext: 'Subtext',
+          left: 'center'
+        },
+        series: [{
+          name: 'Series Name',
+          type: 'pie',
+          radius: '50%',
+          data: this.data2.map(item => ({ name: item.language, value: item.twitterCount })),
+        }]
+      };
+      this.chart2.setOption(pieOption);
     }
+
   }
 }
 </script>
