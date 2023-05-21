@@ -11,7 +11,7 @@
       <button class="btn btn-primary" @click="getData5">month-polarity</button>
     </div>
 
-    <button class="btn btn-primary close-button" @click="closeData">close</button>
+    <button class="btn btn-primary close-button" @click="closeData">close all</button>
     
     <div id="chart" v-show="showChart1" style="width: 600px;height:400px;"></div>
     <div id="chart2" v-show="showChart2" style="width: 600px;height:800px;"></div>
