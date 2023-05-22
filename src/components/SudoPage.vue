@@ -10,9 +10,14 @@
 
     <button class="btn btn-primary close-button" @click="closeData">close</button>
 
-    <div id="chart" v-show="showChart1" style="width: 600px;height:400px;"></div>
-    <div id="chart2" v-show="showChart2" style="width: 600px;height:400px;"></div>
+    <div class="chart-container">
 
+
+      <div id="chart" v-show="showChart1" style="width: 600px;height:400px;"></div>
+      <div id="chart2" v-show="showChart2" style="width: 600px;height:400px;"></div>
+
+
+    </div>
 
   </div>
 </template>
@@ -183,5 +188,10 @@ export default {
 
 .close-button {
   margin-top: 20px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
 }
 </style>

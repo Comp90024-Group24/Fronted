@@ -12,12 +12,13 @@
     </div>
 
     <button class="btn btn-primary close-button" @click="closeData">close all</button>
-    
+    <div class="chart-container">
     <div id="chart" v-show="showChart1" style="width: 600px;height:400px;"></div>
-    <div id="chart2" v-show="showChart2" style="width: 600px;height:800px;"></div>
-    <div id="chart3" v-show="showChart3" style="width: 600px;height:400px;"></div>
-    <div id="chart4" v-show="showChart4" style="width: 600px;height:400px;"></div>
-    <div id="chart5" v-show="showChart5" style="width: 600px;height:400px;"></div>
+      <div id="chart2" v-show="showChart2" style="width: 600px;height:800px;"></div>
+      <div id="chart3" v-show="showChart3" style="width: 600px;height:400px;"></div>
+      <div id="chart4" v-show="showChart4" style="width: 600px;height:400px;"></div>
+      <div id="chart5" v-show="showChart5" style="width: 600px;height:400px;"></div>
+    </div>
   </div>
 </template>
 
@@ -283,6 +284,11 @@ export default {
 
 .close-button {
   margin-top: 20px;
+}
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 </style>
 
