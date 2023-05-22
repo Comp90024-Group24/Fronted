@@ -168,7 +168,7 @@ export default {
         yAxis: {
         },
         series: [{
-          name: 'time',
+          name: 'number',
           type: 'bar',
           data: this.data2.map(item => item.time)
         }]
