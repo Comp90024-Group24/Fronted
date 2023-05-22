@@ -57,7 +57,7 @@ export default {
     },
     async getData1() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/eachjobtype_num');
+        const response = await axios.get('http://172.26.133.42:8000/eachjobtype_num');
         console.log(response.data);
         this.data = response.data;
         this.showChart1 = true;
@@ -68,7 +68,7 @@ export default {
     },
     async getData2() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/job_type_time');
+        const response = await axios.get('http://172.26.133.42:8000/job_type_time');
         console.log(response.data);
         this.data2 = response.data;
         this.showChart2 = true;

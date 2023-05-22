@@ -69,17 +69,17 @@ export default {
     },
     async getData1() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/art_num');
+        const response = await axios.get('http://172.26.133.42:8000/art_num');
         console.log(response.data);
         this.data = response.data;
         this.showChart1 = true;
-        const response2 = await axios.get('http://127.0.0.1:8000/edu_num');
+        const response2 = await axios.get('http://172.26.133.42:8000/edu_num');
         console.log(response2.data);
         this.data2 = response2.data;
-        const response3 = await axios.get('http://127.0.0.1:8000/fin_num');
+        const response3 = await axios.get('http://172.26.133.42:8000/fin_num');
         console.log(response3.data);
         this.data3 = response3.data;
-        const response4 = await axios.get('http://127.0.0.1:8000/tech_num');
+        const response4 = await axios.get('http://172.26.133.42:8000/tech_num');
         console.log(response4.data);
         this.data4 = response4.data;
         this.updateChart();
@@ -89,7 +89,7 @@ export default {
     },
     async getData2() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/job_type_num');
+        const response = await axios.get('http://172.26.133.42:8000/job_type_num');
         console.log(response.data);
         this.data5 = response.data;
         this.showChart2 = true;
@@ -100,7 +100,7 @@ export default {
     },
     async getData3() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/industry_month_num');
+        const response = await axios.get('http://172.26.133.42:8000/industry_month_num');
         console.log(response.data);
         this.data6 = response.data;
         this.showChart3 = true;
@@ -111,16 +111,16 @@ export default {
     },
     async getData4() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/art_polarity_num');
+        const response = await axios.get('http://172.26.133.42:8000/art_polarity_num');
         console.log(response.data);
         this.data7 = response.data;
-        const response2 = await axios.get('http://127.0.0.1:8000/edu_polarity_num');
+        const response2 = await axios.get('http://172.26.133.42:8000/edu_polarity_num');
         console.log(response2.data);
         this.data8 = response2.data;
-        const response3 = await axios.get('http://127.0.0.1:8000/fin_polarity_num');
+        const response3 = await axios.get('http://172.26.133.42:8000/fin_polarity_num');
         console.log(response3.data);
         this.data9 = response3.data;
-        const response4 = await axios.get('http://127.0.0.1:8000/tech_polarity_num');
+        const response4 = await axios.get('http://172.26.133.42:8000/tech_polarity_num');
         console.log(response4.data);
         this.data0 = response4.data;
 

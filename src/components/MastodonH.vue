@@ -59,7 +59,7 @@ export default {
   methods: {
     async getData1() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/mastodon_month_num');
+        const response = await axios.get('http://172.26.133.42:8000/mastodon_month_num');
         console.log(response.data);
         this.data = response.data;
 
@@ -69,7 +69,7 @@ export default {
     },
     async getData2() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/polarity_sum');
+        const response = await axios.get('http://172.26.133.42:8000/polarity_sum');
         console.log(response.data);
         this.data2 = response.data;
         this.showChart2 = true;
