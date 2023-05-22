@@ -150,7 +150,7 @@ export default {
     updateChart2() {
       const option = {
         title: {
-          text: 'Average Work Time by City'
+          text: 'Job number by City'
         },
         tooltip: {},
         xAxis: [{
